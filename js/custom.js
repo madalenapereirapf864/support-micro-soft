@@ -1,36 +1,34 @@
-// to get current year
-function getYear() {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
+// Get Current Year
+function getCurrentYear() {
+    var d = new Date();
+    var year = d.getFullYear();
+    document.querySelector("#displayDateYear").innerText = year;
 }
+getCurrentYear()
 
-getYear();
-
-
-
-// slick slider
-$('.chocolate_container').slick({
-    infinite: true,
-    center: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [{
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
+//client section owl carousel
+$(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots: false,
+    navText: [
+        '<i class="fa fa-long-arrow-left" aria-hidden="true"></i>',
+        '<i class="fa fa-long-arrow-right" aria-hidden="true"></i>'
+    ],
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {
+            items: 1
         },
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
+        768: {
+            items: 2
+        },
+        1000: {
+            items: 2
         }
-
-    ]
+    }
 });
 
 /** google_map js **/
